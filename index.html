@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/6912/6912859.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Gerador de Tabuada de Potenciação</title>
+</head>
+<body>
+<div id="container">
+    <h1>Gerador de Potenciacao</h1>
+    <input type="number" id="numInput" placeholder=" DIGITE UM NUMERO">
+    <br>
+    <BUtton onclick="geradortabuada()">Gerar Tabuada</BUtton>
+    <div id="tabuada"></div>
+</div>
+<script>
+    function geradortabuada(){
+        var numInput = document.getElementById("numInput").value;
+        var tabuadaDiv = document.getElementById("tabuada");
+        tabuadaDiv.innerHTML = "";
+        if(!numInput|| isNaN(numInput)){
+            tabuadaDiv.innerHTML = "<p>Por favor, insira um número válido.</p>";
+            return;}
+        var tableHTML = "<h3>Potenciacao de  " + numInput + " </h3> <table > <tr> <th> Numero </th> <th> Resultado </th> </tr>";
+            for (var i = 1; i <= 15;i++){
+                tableHTML += "<tr><td>" + numInput + "^" + i + "</td><td>" + (numInput ** i) + "</td></tr>";
+            }
+            tableHTML += "</table>";
+            tabuadaDiv.innerHTML = tableHTML;
+    }
+</script>
+<footer>
+    <P>
+        Feito por Luiz Bueno&copy;
+    </P>
+</footer>
+</body>
+</html>
